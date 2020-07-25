@@ -1,4 +1,7 @@
 rootProject.name='ComponentBased'
 include ':app'
+include ':jiekroute'
 include ':login'
 include ':member'
+include ':jiekrouteannotation'
+include ':jiekrouteannotationcompiler'

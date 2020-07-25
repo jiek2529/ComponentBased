@@ -1,0 +1,4 @@
+rootProject.name='ComponentBased'
+include ':app'
+include ':login'
+include ':member'

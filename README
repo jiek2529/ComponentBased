@@ -1,0 +1,43 @@
+#组件化开发整理
+
+## gradle mac配置 gradle ali maven 全局代理
+
+> cd ~/.gradle/
+> touch init.gradle
+```
+allprojects {
+    repositories {
+        def ALIYUN_REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public'
+        def ALIYUN_JCENTER_URL = 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
+        def ALIYUN_GOOGLE_URL = 'http://maven.aliyun.com/nexus/content/repositories/google'
+        all { ArtifactRepository repo ->
+            if(repo instanceof MavenArtifactRepository){
+                def url = repo.url.toString()
+                if (url.startsWith('https://repo1.maven.org/maven2')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced aa by $ALIYUN_REPOSITORY_URL."
+                    remove repo
+                }
+                if (url.startsWith('https://jcenter.bintray.com/')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced bb by $ALIYUN_JCENTER_URL."
+                    remove repo
+                }
+                if (url.startsWith('https://dl.google.com/dl/android/maven2/')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced cc by $ALIYUN_GOOGLE_URL."
+                    remove repo
+                }
+            }
+        }
+        maven { url ALIYUN_GOOGLE_URL }
+        maven { url ALIYUN_REPOSITORY_URL }
+        maven { url ALIYUN_JCENTER_URL }
+    }
+}
+```
+
+## 组件化配置
+
+1. 将项目各子模块单独拆分开发
+2. 使用 gradle.properties 中定义变量，区分子项目是库或应用
+3. Library 库不能包含 applicationId，用变量屏蔽
+4.
+

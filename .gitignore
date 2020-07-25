@@ -12,6 +12,9 @@
 /app/src/androidTest/**
 /app/src/test/**
 
+/jiekroute/build/
+/jiek_annotationcompiler/build/
+
 /login/build/
 /login/src/androidTest/**
 /login/src/test/**

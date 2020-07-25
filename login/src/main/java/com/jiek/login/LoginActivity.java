@@ -5,8 +5,10 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.jiek.jiek_annotation.Route;
 import com.jiek.route.JiekRoute;
 
+@Route("login/login")
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -16,6 +18,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void jumpMember(View view) {
-        JiekRoute.getInstance().init(this).jumpActivity("member/member", null);
+        JiekRoute.getInstance().jumpActivity("member/member", null);
     }
 }

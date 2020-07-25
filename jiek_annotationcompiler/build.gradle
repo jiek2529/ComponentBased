@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+//使用注解，需要引入com.google.auto.service:auto-service；以下两行
+    //annotationProcessor有多少的子项目引入此模块，即会产生几次
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc7'
+    compileOnly 'com.google.auto.service:auto-service:1.0-rc7'
+
+    implementation project(path: ':jiek_annotation')
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"

@@ -1,9 +1,12 @@
 package com.jiek.member;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.jiek.jiek_annotation.Route;
+
+@Route("member/member")
 public class MemberActivity extends AppCompatActivity {
 
     @Override

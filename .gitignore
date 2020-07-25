@@ -7,3 +7,15 @@
 /captures
 .externalNativeBuild
 .cxx
+
+/app/build/
+/app/src/androidTest/**
+/app/src/test/**
+
+/login/build/
+/login/src/androidTest/**
+/login/src/test/**
+
+/member/build/
+/member/src/androidTest/**
+/member/src/test/**

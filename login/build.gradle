@@ -27,6 +27,15 @@ android {
         }
     }
 
+    sourceSets {
+        main {
+            if (MODULE_IS_APPLICATION.toBoolean()) {//项目为应用时，使用正常 APP配置
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {//项目为库时，清楚非主项目的配置
+                manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+            }
+        }
+    }
 }
 
 dependencies {
